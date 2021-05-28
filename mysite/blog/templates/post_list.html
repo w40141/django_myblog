@@ -2,13 +2,21 @@
 {% block title %}My Blog{% endblock title %}
 
 {% block content %}
-        {% for post in posts %}
-        <div>
-            <h2>
-                <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
-            </h2>
-            <p>{{ post.create_at }}</p>
-            <p>{{ post.body }}</p>
-        </div>
-        {% endfor %}
+{% for post in posts %}
+<div class="card mb-3 p-2">
+    <div class="card-body">
+        <h2 class="card-title">
+            <a class="text-dark text-decoration-none" href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+        </h2>
+        <h6 class="card-subtitle mb-3 text-muted">
+            <p>{{ post.created_at }}</p>
+        </h6>
+        <p class="card-text">{{ post.body|truncatechars:180 }}</p>
+        <a href="{% url 'post_detail' post.id %}">
+            記事を読む
+        </a>
+    </div>
+
+</div>
+{% endfor %}
 {% endblock content %}
