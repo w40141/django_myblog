@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.urls import reverse, resolve
+from django.urls import resolve
 from ..views import PostListView, PostDetailView
 
 
@@ -10,5 +10,5 @@ class TestUrls(TestCase):
         self.assertEqual(view.func.view_class, PostListView)
 
     def test_post_detail_url(self):
-        view = resolve("/blog/posts/<int:post_id>/")
+        view = resolve("/blog/detail/<int:post_id>/")
         self.assertEqual(view.func.view_class, PostDetailView)

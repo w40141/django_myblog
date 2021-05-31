@@ -8,7 +8,7 @@ class PostModelTests(TestCase):
     #     saved_posts = Post.objects.all()
     #     self.assertEqual(saved_posts.count, 0)
 
-    def test_saving_and_retrieving_post(self, ):
+    def test_saving_and_retrieving_post(self):
         post = Post()
         title = "test_title_to_retrieve"
         body = "test_body_to_retrieve"
