@@ -3,9 +3,9 @@ h1 {
     margin: 3rem;
     font-size: 2rem;
     text-align: center;
-    text-shadow: 1px 1px 2px #0000002b;
-    background: #22baac;
-    border-radius: 2px;
+    background: #f59542;
+    color: #000000;
+    border-radius: 5px;
 }
 
 h2.card-title {

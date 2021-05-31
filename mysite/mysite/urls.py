@@ -16,19 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-# from blog.views import post_list, post_detail
-# from blog.views import PostListView, PostDetailView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("posts/<int:post_id>", include("blog.urls"),),
-    path("", include("blog.urls")),
-    # path(
-    #     "posts/<int:post_id>/",
-    #     PostDetailView.as_view(),
-    #     name="post_detail",
-    # ),
-    # path("", PostListView.as_view(), name="post_list"),
-    # path("posts/<int:post_id>/", post_detail, name="post_detail"),
-    # path("", post_list, name="post_list"),
+    path("blog/", include("blog.urls"),),
 ]

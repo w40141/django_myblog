@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'blog/base.html' %}
 
 {% block title %}{{ post.title }} - My Bolg{% endblock title %}
 
@@ -8,11 +8,11 @@
 
     </div>
     <h2 class="card-title">{{ post.title }}</h2>
-    <h6 class="card-subtitle mb-3 text-muted">{{ post.create_at }}</h6>
+    <h6 class="card-subtitle mb-3 text-muted">{{ post.created_at }}</h6>
     <p>{{ post.body | linebreaksbr | urlize}}</p>
 </div>
 
 <div>
-    <a href="{% url 'post_list' %}">一覧に戻る</a>
+    <a href="{% url 'blog:post_list' %}">一覧に戻る</a>
 </div>
 {% endblock content %}

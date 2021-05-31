@@ -7,11 +7,14 @@ class Post(models.Model):
     """Post class"""
 
     title = models.CharField(
-        "Title ",
+        "Title",
         max_length=100,
     )
     body = models.TextField("Content")
     created_at = models.DateTimeField(
-        "Date ",
+        "Date",
         auto_now_add=True,
     )
+
+    def __str__(self):
+        return self.title
